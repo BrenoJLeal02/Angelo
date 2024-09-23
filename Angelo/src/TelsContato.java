@@ -7,13 +7,8 @@ public class TelsContato {
     public TelsContato() {
         this.telefones = new ArrayList<>();
     }
-
     public void adicionarTelefone(String telefone) {
         telefones.add(telefone);
-    }
-
-    public List<String> getTelefones() {
-        return telefones;
     }
 
     @Override

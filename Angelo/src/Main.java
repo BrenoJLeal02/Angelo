@@ -35,7 +35,7 @@ public class Main {
 
             LocalDate dataDeNascimento = LocalDate.of(ano, mes, dia);
 
-            //endereço
+            // Endereço
             System.out.print("Digite a rua: ");
             String rua = scanner.nextLine();
             System.out.print("Digite o número: ");
@@ -49,7 +49,7 @@ public class Main {
 
             Endereco endereco = new Endereco(rua, numero, cidade, estado, cep);
 
-            // Lista tel
+            // Lista de telefones
             TelsContato telsContato = new TelsContato();
             System.out.print("Quantos telefones deseja adicionar? ");
             int quantidadeTelefones = scanner.nextInt();
@@ -81,14 +81,18 @@ public class Main {
 
             } else if (opcao == 2) {
                 // Cadastro de Funcionário
-                System.out.print("Digite o cargo do funcionário: ");
-                String cargo = scanner.nextLine();
+                System.out.print("Digite o nome do cargo: ");
+                String nomeCargo = scanner.nextLine();
+                System.out.print("Digite a descrição do cargo: ");
+                String descricaoCargo = scanner.nextLine();
+
+                Cargo cargo = new Cargo(nomeCargo, descricaoCargo); // Cria um objeto Cargo
 
                 System.out.print("Digite o salário do funcionário: ");
                 double salario = scanner.nextDouble();
                 scanner.nextLine();
 
-                // admissão
+                // Admissão
                 System.out.print("Digite o ano de admissão (ex: 2023): ");
                 int anoAdmissao = scanner.nextInt();
                 scanner.nextLine();
@@ -114,8 +118,12 @@ public class Main {
                 scanner.nextLine();
 
                 // Promover funcionário
-                System.out.print("Digite o novo cargo para promoção: ");
-                String novoCargo = scanner.nextLine();
+                System.out.print("Digite o novo nome do cargo para promoção: ");
+                String novoNomeCargo = scanner.nextLine();
+                System.out.print("Digite a nova descrição do cargo: ");
+                String novaDescricaoCargo = scanner.nextLine();
+
+                Cargo novoCargo = new Cargo(novoNomeCargo, novaDescricaoCargo);
                 funcionario.promover(novoCargo);
 
                 System.out.println("\n=== Informações Atualizadas do Funcionário ===");

@@ -3,13 +3,13 @@ import java.time.LocalDate;
 public class Funcionario {
     private String nome;
     private LocalDate dataDeNascimento;
-    private String cargo;
+    private Cargo cargo;
     private double salario;
     private LocalDate dataAdmissao;
     private Endereco endereco;
     private TelsContato telsContato;
 
-    public Funcionario(String nome, LocalDate dataDeNascimento, String cargo, double salario, LocalDate dataAdmissao, Endereco endereco, TelsContato telsContato) {
+    public Funcionario(String nome, LocalDate dataDeNascimento, Cargo cargo, double salario, LocalDate dataAdmissao, Endereco endereco, TelsContato telsContato) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.cargo = cargo;
@@ -28,7 +28,7 @@ public class Funcionario {
         }
     }
 
-    public void promover(String novoCargo) {
+    public void promover(Cargo novoCargo) {
         this.cargo = novoCargo;
         System.out.println("Funcionário promovido para: " + novoCargo);
     }
@@ -43,5 +43,4 @@ public class Funcionario {
                 "\nEndereço: " + endereco +
                 "\nContatos: " + telsContato;
     }
-
 }
